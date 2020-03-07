@@ -8,16 +8,13 @@ dpkg -l | grep -qw gdebi || sudo apt-get install -yyq gdebi
 
 sudo apt update
 
-sudo apt install virtualbox virtualbox-guest-additions-iso virtualbox-ext-pack \
-net-tools htop lame git mc flatpak audacity \
-openssh-server sshfs gedit-plugin-text-size simplescreenrecorder nano \
+sudo apt install net-tools htop lame git mc flatpak audacity \
+openssh-server sshfs gedit-plugin-text-size nano \
 ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
+calibre qbittorrent
 gnome-tweak-tool qt5-style-plugins spell synaptic -yy
 
-# Add me to any groups I might need to be a part of:
-
-sudo adduser $USER vboxusers
-
+#    pia 
 # Remove undesirable packages:
 
 sudo apt purge gstreamer1.0-fluendo-mp3 deja-dup shotwell whoopsie whoopsie-preferences -yy
@@ -27,6 +24,10 @@ sudo apt purge gstreamer1.0-fluendo-mp3 deja-dup shotwell whoopsie whoopsie-pref
 sudo snap remove gnome-characters gnome-calculator gnome-system-monitor
 sudo apt install gnome-characters gnome-calculator gnome-system-monitor \
 gnome-software-plugin-flatpak -yy
+
+# ...and install snaps...
+snap install spotify 
+sudo snap install code --classic
 
 # Purge Firefox, install Chromium:
 
@@ -45,6 +46,28 @@ gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
 #set icons to minimize on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
+# install Brave 
+
+sudo apt install apt-transport-https curl
+
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+
+source /etc/os-release
+
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+
+sudo apt update
+
+sudo apt install brave-browser
+
+
+#install Stacer
+ 
+wget https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
+
+dpkg --install stacer_1.1.0_amd64.deb
+
+
 ## Remove junk
 sudo apt-get remove ubuntu-web-launchers thunderbird rhythmbox -y
 
@@ -56,6 +79,9 @@ sudo apt-get install -y steam-installer
 
 ## Disable Apport
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
+
+wget https://launcher.mojang.com/download/Minecraft.deb
+sudo gdebi ~/Minecraft.deb
 
 # Gotta reboot now:
 sudo apt update && sudo apt upgrade -y
