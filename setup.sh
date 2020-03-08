@@ -11,7 +11,7 @@ sudo apt update
 sudo apt install net-tools htop lame git mc flatpak audacity \
 openssh-server sshfs gedit-plugin-text-size nano \
 ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
-calibre qbittorrent
+calibre qbittorrent gnome-control-center
 gnome-tweak-tool qt5-style-plugins spell synaptic -yy
 
 #    pia 
