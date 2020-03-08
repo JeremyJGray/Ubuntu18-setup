@@ -65,7 +65,7 @@ sudo apt install brave-browser
  
 wget https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
 
-dpkg --install stacer_1.1.0_amd64.deb
+sudo dpkg --install stacer_1.1.0_amd64.deb
 
 
 ## Remove junk
