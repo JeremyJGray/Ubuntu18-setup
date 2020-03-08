@@ -11,7 +11,7 @@ sudo apt update
 sudo apt install net-tools htop lame git mc flatpak audacity \
 openssh-server sshfs gedit-plugin-text-size nano \
 ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
-calibre qbittorrent gnome-control-center
+calibre qbittorrent
 gnome-tweak-tool qt5-style-plugins spell synaptic -yy
 
 #    pia 
@@ -46,6 +46,9 @@ gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
 #set icons to minimize on click
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
+
+
+
 # install Brave 
 
 sudo apt install apt-transport-https curl
@@ -65,7 +68,7 @@ sudo apt install brave-browser
  
 wget https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
 
-sudo dpkg --install stacer_1.1.0_amd64.deb
+dpkg --install stacer_1.1.0_amd64.deb
 
 
 ## Remove junk
@@ -76,6 +79,12 @@ sudo apt-get install -y gimp scribus
 
 ## Games
 sudo apt-get install -y steam-installer
+
+
+# Install Private Internet Access
+wget https://installers.privateinternetaccess.com/download/pia-linux-1.8-04193.run
+sh ./pia-linux-1.8-04193.run
+
 
 ## Disable Apport
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
