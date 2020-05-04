@@ -50,7 +50,15 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 # install Emacs / Spacemacs
 
-sudo apt install emacs26
+sudo apt install emacs -yy
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+# get Roboto Mono font for Spacemacs
+sudo wget --content-disposition -P /usr/share/fonts/truetype/robotomono https://github.com/google/fonts/blob/master/apache/robotomono/RobotoMono-{Bold,BoldItalic,Italic,Light,LightItalic,Medium,MediumItalic,Regular,Thin,ThinItalic}.ttf?raw=true
+
+
+
+
 
 
 
