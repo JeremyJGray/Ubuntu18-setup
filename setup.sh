@@ -98,6 +98,11 @@ sudo apt-get install -y steam-installer
 wget https://installers.privateinternetaccess.com/download/pia-linux-1.8-04193.run
 sh ./pia-linux-1.8-04193.run
 
+# Install Nextcloud Client
+
+sudo add-apt-repository ppa:nextcloud-devs/client -y
+sudo apt install nextcloud-client -y
+
 
 ## Disable Apport
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
