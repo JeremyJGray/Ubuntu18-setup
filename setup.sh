@@ -92,10 +92,12 @@ sudo apt-get install -y gimp scribus
 ## Games
 sudo apt-get install -y steam-installer
 
+wget https://launcher.mojang.com/download/Minecraft.deb
+sudo gdebi ~/Minecraft.deb
 
 # Install Private Internet Access
-wget https://installers.privateinternetaccess.com/download/pia-linux-1.8-04193.run
-sh ./pia-linux-1.8-04193.run
+wget https://installers.privateinternetaccess.com/download/pia-linux-2.0.2-04704.run
+sh ./pia-linux-2.0.2-04704.run
 
 # Install Nextcloud Client
 
@@ -106,8 +108,7 @@ sudo apt install nextcloud-client -y
 ## Disable Apport
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
 
-wget https://launcher.mojang.com/download/Minecraft.deb
-sudo gdebi ~/Minecraft.deb
+
 
 # Gotta reboot now:
 sudo apt update && sudo apt upgrade -y
