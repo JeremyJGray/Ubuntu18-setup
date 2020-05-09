@@ -11,7 +11,7 @@ sudo apt update
 sudo apt install net-tools htop lame git mc flatpak audacity \
 openssh-server sshfs gedit-plugin-text-size nano \
 ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
-calibre qbittorrent nodejs
+calibre qbittorrent nodejs neofetch emacs \
 gnome-tweak-tool qt5-style-plugins spell synaptic -yy
 
 #    pia 
@@ -48,9 +48,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 
 
-# install Emacs / Spacemacs
+# install Spacemacs
 
-sudo apt install emacs -yy
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # get Roboto Mono font for Spacemacs
@@ -64,7 +63,8 @@ sudo wget --content-disposition -P /usr/share/fonts/truetype/robotomono https://
 
 # install Brave 
 
-sudo apt install apt-transport-https curl
+sudo apt install apt-transport-https curl -y
+
 
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 
@@ -74,14 +74,13 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_C
 
 sudo apt update
 
-sudo apt install brave-browser
+sudo apt install brave-browser -y
 
 
 #install Stacer
- 
-wget https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
-
-dpkg --install stacer_1.1.0_amd64.deb
+sudo add-apt-repository ppa:oguzhaninan/stacer
+sudo apt-get update
+sudo apt-get install stacer -y
 
 
 ## Remove junk
