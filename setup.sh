@@ -51,24 +51,14 @@ sudo wget --content-disposition -P /usr/share/fonts/truetype/robotomono https://
 
 
 
-
-
-
-
 # install Brave 
 
-sudo apt install apt-transport-https curl -y
-
-
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-
-source /etc/os-release
-
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
-
 sudo apt update
-
-sudo apt install brave-browser -y
+sudo apt -y install curl software-properties-common apt-transport-https 
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install -y brave-browser
 
 
 #install Stacer
