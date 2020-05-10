@@ -34,14 +34,6 @@ if [ -d "/home/$USER/.cache/mozilla" ]; then
     rm -rf /home/$USER/.cache/mozilla
 fi
 
-sudo apt install chromium-browser
-
-gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
-#set icons to minimize on click
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-
-
-
 # install Spacemacs
 
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
