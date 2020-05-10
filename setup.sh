@@ -19,15 +19,9 @@ gnome-tweak-tool spell synaptic -yy
 
 sudo apt purge gstreamer1.0-fluendo-mp3 deja-dup shotwell whoopsie whoopsie-preferences -yy
 
-# Remove snaps and get packages from apt:
-
-sudo snap remove gnome-characters gnome-calculator gnome-system-monitor
-sudo apt install gnome-characters gnome-calculator gnome-system-monitor \
-gnome-software-plugin-flatpak -yy
 
 # ...and install snaps...
 snap install spotify 
-sudo snap install code --classic
 
 # Purge Firefox, install Chromium:
 
