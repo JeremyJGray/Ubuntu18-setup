@@ -9,10 +9,10 @@ dpkg -l | grep -qw gdebi || sudo apt-get install -yyq gdebi
 sudo apt update
 
 sudo apt install net-tools htop lame git mc flatpak audacity \
-openssh-server sshfs gedit-plugin-text-size nano \
+openssh-server sshfs gedit-plugin-text-size \
 ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
 calibre qbittorrent nodejs neofetch emacs \
-gnome-tweak-tool qt5-style-plugins spell synaptic -yy
+gnome-tweak-tool spell synaptic -yy
 
 #    pia 
 # Remove undesirable packages:
