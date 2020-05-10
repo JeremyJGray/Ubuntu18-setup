@@ -60,7 +60,7 @@ sudo apt-get install stacer -y
 
 
 ## Remove junk
-sudo apt-get remove ubuntu-web-launchers thunderbird rhythmbox -y
+sudo apt-get remove thunderbird rhythmbox -y
 
 ## Multimedia
 sudo apt-get install -y gimp scribus
@@ -69,7 +69,7 @@ sudo apt-get install -y gimp scribus
 sudo apt-get install -y steam-installer
 
 wget https://launcher.mojang.com/download/Minecraft.deb
-sudo gdebi ~/Minecraft.deb
+sudo gdebi ~/Minecraft.deb -y
 
 # Install Private Internet Access
 wget https://installers.privateinternetaccess.com/download/pia-linux-2.0.2-04704.run
