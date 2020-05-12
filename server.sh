@@ -1,4 +1,6 @@
-Most of this is taken from https://www.linuxbabe.com/ubuntu/install-lamp-stack-ubuntu-20-04-server-desktop
+# Most of this is taken from https://www.linuxbabe.com/ubuntu/install-lamp-stack-ubuntu-20-04-server-desktop
+# and https://computingforgeeks.com/how-to-install-lamp-stack-on-ubuntu/
+# and https://docs.nextcloud.com/server/18/admin_manual/installation/source_installation.html
 
 # Install MariaDB Server on Ubuntu 20.04 (Focal Fossa)
 # We always start our installations by ensuring the system is updated. This can be achieved by running the commands:
@@ -72,13 +74,40 @@ php --version
 unzip nextcloud-x.y.z.zip
 
 
-sudo cp -r nextcloud /var/www/html/
+sudo cp -r nextcloud /var/www/
+
+# create a /etc/apache2/sites-available/nextcloud.conf file with these lines in it, 
+# replacing the Directory and other filepaths with your own filepaths:
+
+Alias /nextcloud "/var/www/nextcloud/"
+
+<Directory /var/www/nextcloud/>
+  Require all granted
+  AllowOverride All
+  Options FollowSymLinks MultiViews
+
+  <IfModule mod_dav.c>
+    Dav off
+  </IfModule>
+
+</Directory>
+
+# Then enable the newly created site:
+
+sudo a2ensite nextcloud.conf
+
+# For Nextcloud to work correctly, we need the module mod_rewrite. Enable it by running:
+
+sudo a2enmod rewrite
+
+# Additional recommended modules are mod_headers, mod_env, mod_dir and mod_mime:
+
+sudo a2enmod headers
+sudo a2enmod env
+sudo a2enmod dir
+sudo a2enmod mime
 
 
 
 
 
-
-sudo apt-get install -y apache2 mariadb-server libapache2-mod-php7.2
-sudo apt-get install -y php7.2-gd php7.2-json php7.2-mysql php7.2-curl php7.2-mbstring
-sudo apt-get install -y php7.2-intl php-imagick php7.2-xml php7.2-zip
