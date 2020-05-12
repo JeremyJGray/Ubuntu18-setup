@@ -108,6 +108,11 @@ sudo a2enmod dir
 sudo a2enmod mime
 
 
-
-
+Setup the nextcloud db and admin
+sudo mysql -u root -p
+	create database nextcloud;
+	create user ncadmin@localhost identified by 'admin123';
+	grant all privileges on nextcloud.* to ncadmin@localhost identified by 'admin123';
+	flush privileges;
+	exit;
 
