@@ -116,7 +116,15 @@ sudo mysql -u root -p
 	flush privileges;
 	exit;
 
-# add 'grayout.duckdns.org' to nextcloud/config/config.php
+# go to localhost/nextcloud to set up
+# ncadmin, password, database is nextcloud
 
+# add trusted domains to nextcloud/config/config.php
+  'trusted_domains' => 
+  array (
+    0 => 'localhost',
+    1 => 'grayout.duckdns.org',
+    2 => '192.168.1.102',
+  ),
 
 
