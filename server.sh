@@ -10,7 +10,7 @@ sudo apt -y upgrade
 
 # Once the system is updated, use the following commands to install MariaDB Server on Ubuntu 20.04 (Focal Fossa).
 
-sudo apt install software-properties-common mariadb-server mariadb-client
+sudo apt install -y software-properties-common mariadb-server mariadb-client
 
 # Confirm that the service is started.
 
