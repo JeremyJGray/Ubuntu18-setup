@@ -49,7 +49,7 @@ sudo chown www-data:www-data /var/www/html/ -R
 
 # Install PHP7.4
 
-# At the the time of this writing, PHP7.4 is the latest stable version of PHP and has a minor performance edge over PHP7.3. Enter the following command to install PHP7.4 and some common PHP modules.
+# Enter the following command to install PHP7.4 and some common PHP modules.
 
 sudo apt install -y php7.4 libapache2-mod-php7.4 php7.4-mysql php-common php7.4-cli php7.4-common php7.4-json php7.4-opcache php7.4-readline
 sudo apt install -y php7.4-gd php7.4-json php7.4-mysql php7.4-curl php7.4-mbstring
@@ -124,7 +124,11 @@ sudo mysql -u root -p
   array (
     0 => 'localhost',
     1 => 'grayout.duckdns.org',
-    2 => '192.168.1.102',
+    2 => 'www.graycloud.space',
+    3 => '192.168.1.102',
   ),
 
+
+# setup duckdns
+https://www.duckdns.org/install.jsp?tab=linux-cron&domain=grayout
 
