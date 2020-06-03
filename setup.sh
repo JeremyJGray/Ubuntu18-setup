@@ -39,8 +39,7 @@ fi
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # get Roboto Mono font for Spacemacs
-sudo wget --content-disposition -P /usr/share/fonts/truetype/robotomono https://github.com/google/fonts/blob/master/apache/robotomono/RobotoMono-{Bold,BoldItalic,Italic,Light,LightItalic,Medium,MediumItalic,Regular,Thin,ThinItalic}.ttf?raw=true
-
+sudo apt install fonts-lato fonts-open-sans fonts-roboto fonts-mononoki
 
 
 # install Brave 
